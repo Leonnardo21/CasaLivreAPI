@@ -25,8 +25,8 @@ public class ReservationRepository : IReservationRepository
 
     public async Task<IEnumerable<Reservation>> GetByPropertyIdAsync(Guid propertyId)
         => await _context.Reservations.Where(r => r.PropertyId == propertyId).ToListAsync();
-
-    public async Task AddAsync(Reservation reservation)
+    
+    public async Task CreateAsync(Reservation reservation)
         => await _context.Reservations.AddAsync(reservation);
 
     public void Update(Reservation reservation)
